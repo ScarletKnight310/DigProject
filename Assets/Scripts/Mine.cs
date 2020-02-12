@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mine : MonoBehaviour
 {
     public KeyCode mine = KeyCode.X;
+    public bool autoMine = false;
     public Vector3 origin;
 
     void Start()
@@ -14,9 +15,9 @@ public class Mine : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        if ((collision.gameObject.tag == "Block") && Input.GetKey(mine))
+        if ((collision.gameObject.tag == "Block") && (Input.GetKey(mine) || autoMine))
             mineIt(collision.gameObject);
-        if ((collision.gameObject.tag == "Death") && Input.GetKey(mine))
+        if ((collision.gameObject.tag == "Death") && (Input.GetKey(mine) || autoMine))
             blowUp(collision.gameObject);
     }
 
