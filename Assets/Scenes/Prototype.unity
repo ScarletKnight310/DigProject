@@ -491,7 +491,7 @@ PrefabInstance:
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: MaxDepth
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
@@ -522,7 +522,7 @@ PrefabInstance:
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: BombRate
-      value: 0.05
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
@@ -756,7 +756,7 @@ PrefabInstance:
     - target: {fileID: 7300731598775974617, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: orthographic size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e2e3f00f816534b98dfda242486225, type: 3}
