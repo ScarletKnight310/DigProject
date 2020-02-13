@@ -21,7 +21,7 @@ public class GroundManager : MonoBehaviour
         PlaceBlocks();
     }
 
-    private void PlaceBlocks()
+    public void PlaceBlocks()
     {
         for (int y = 0; y >= -MaxDepth; y--)
         {
@@ -41,7 +41,11 @@ public class GroundManager : MonoBehaviour
         }
     }
 
-    private void CreateBounds()
+    public void resetBottom() {
+        bounds[2].transform.position=new Vector3(0, -MaxDepth-1,0);
+    }
+
+    public void CreateBounds()
     {
         //------------------------------- create
         for(int i = 0; i < bounds.Length; i++)
