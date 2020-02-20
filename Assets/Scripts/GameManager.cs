@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         manager = gm.GetComponent<GroundManager>();
+        PlayingPanel.Instance.showLevel(level);
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     {
         if (player.transform.position.y <= (-1*manager.MaxDepth)) {
             player.transform.position = new Vector3(0, 0, 0);
+            player.GetComponent<Movement>().zero();
             if (level <= 5)
             {
                 manager.MaxDepth = manager.MaxDepth * 2;
@@ -38,6 +40,8 @@ public class GameManager : MonoBehaviour
             manager.resetBottom();
             manager.PlaceBlocks();
             level++;
+            PlayingPanel.Instance.showLevel(level);
         }
     }
 }
+
