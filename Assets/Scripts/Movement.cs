@@ -20,6 +20,11 @@ public class Movement : MonoBehaviour
     private float directy = 0;
     private float tHold = 0.2f;
 
+    public void zero() {
+        Reset();
+        player_body.velocity = Vector3.zero;
+    }
+
     void Start()
     {
         if (player_body == null)
