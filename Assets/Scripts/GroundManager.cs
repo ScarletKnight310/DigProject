@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GroundManager : MonoBehaviour
 {
-    public GameObject[] blocks = new GameObject[1];
-    public GameObject[] bombs = new GameObject[1];
+    public GameObject[] block_types = new GameObject[1];
+    public GameObject[] bomb_types = new GameObject[1];
+    public List<GameObject> block_ref = new List<GameObject>(); 
 
     public int MaxDepth = 20;
     public int Xrange = 9;
@@ -21,7 +22,7 @@ public class GroundManager : MonoBehaviour
         PlaceBlocks();
     }
 
-    private void PlaceBlocks()
+    public void PlaceBlocks()
     {
         for (int y = 0; y >= -MaxDepth; y--)
         {
@@ -30,18 +31,22 @@ public class GroundManager : MonoBehaviour
                 // MaxNumBombs >= 0 &&
                 if (!(-BombBuffer < y) && Random.value <= BombRate)
                 {
-                    Instantiate(bombs[Random.Range(0, bombs.Length)], new Vector3(x, y, 0), Quaternion.identity);
+                    block_ref.Add(Instantiate(bomb_types[Random.Range(0, bomb_types.Length)], new Vector3(x, y, 0), Quaternion.identity));
                    // MaxNumBombs--;
                 }
                 else
                 {
-                    Instantiate(blocks[Random.Range(0, blocks.Length)], new Vector3(x, y, 0), Quaternion.identity);
+                    block_ref.Add(Instantiate(block_types[Random.Range(0, block_types.Length)], new Vector3(x, y, 0), Quaternion.identity));
                 }
             }
         }
     }
 
-    private void CreateBounds()
+    public void resetBottom() {
+        bounds[2].transform.position=new Vector3(0, -MaxDepth-1,0);
+    }
+
+    public void CreateBounds()
     {
         //------------------------------- create
         for(int i = 0; i < bounds.Length; i++)
@@ -62,5 +67,15 @@ public class GroundManager : MonoBehaviour
         bounds[2].transform.localScale = new Vector3((Xrange * 2) + 1, 1, 1);
         // top
         bounds[3].transform.localScale = new Vector3((Xrange * 2) + 1, 1, 1);
+    }
+
+    public void removeLevel()
+    {
+        print("got here");
+        while(block_ref.Count > 0)
+        {
+            Destroy(block_ref[0]);
+            block_ref.RemoveAt(0);
+        }
     }
 }
