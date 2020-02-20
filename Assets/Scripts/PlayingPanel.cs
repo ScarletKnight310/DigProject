@@ -9,6 +9,8 @@ public class PlayingPanel : MonoBehaviour
     
     public Text DepthDisplay;
 
+    public Text LevelDisplay;
+
 
     void Awake()
     {
@@ -22,24 +24,19 @@ public class PlayingPanel : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ShowDepth(int depth)
     {
         if(DepthDisplay != null)
         {
             DepthDisplay.text = "Max Depth: " + depth + " Leagues";
             Debug.Log("updated text");
+        }
+    }
+
+
+    public void showLevel(int level) {
+        if (LevelDisplay != null) {
+            LevelDisplay.text = "Level: " + level;
         }
     }
 }
