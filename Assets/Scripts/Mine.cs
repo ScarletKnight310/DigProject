@@ -7,6 +7,8 @@ public class Mine : MonoBehaviour
     public KeyCode mine = KeyCode.X;
     public bool autoMine = false;
     public Vector3 origin;
+    public int miningPointValue = 1;
+    public ParticleSystem blockBreak;
 
     void Start()
     {
@@ -24,7 +26,10 @@ public class Mine : MonoBehaviour
     public void mineIt(GameObject block)
     {
         Depth.updateDepth((int)block.transform.position.y * -1);
+        Score.updateScore(miningPointValue);
         Destroy(block);
+        blockBreak.transform.position = block.transform.position;
+        blockBreak.Play();
     }
 
     public void blowUp(GameObject bomb)
