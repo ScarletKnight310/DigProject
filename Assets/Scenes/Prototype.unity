@@ -208,6 +208,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011140743}
   m_CullTransparentMesh: 0
+<<<<<<< Updated upstream
+=======
+--- !u!1 &1290630856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1290630858}
+  - component: {fileID: 1290630857}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1290630857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290630856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c1099afc55ad24e9a0a393b6de1835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 1340582354270382038}
+  player: {fileID: 1846762798}
+  depthInc: 50
+--- !u!4 &1290630858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290630856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1412179219
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +583,18 @@ PrefabInstance:
       propertyPath: BombBuffer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: bomb_types.Array.data[0]
+      value: 
+      objectReference: {fileID: 564652645863860807, guid: 05673d4804bc63344b1fb1e9fe3d04c3,
+        type: 3}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: block_types.Array.data[0]
+      value: 
+      objectReference: {fileID: 4049424157649377066, guid: c4d3eb4da4340474784d9ed84ca54a89,
+        type: 3}
     - target: {fileID: 1340582353526314183, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -601,7 +662,7 @@ PrefabInstance:
     - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: speed
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
@@ -628,6 +689,7 @@ PrefabInstance:
       propertyPath: down
       value: 115
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 7300731598320886819, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: m_Name
@@ -637,6 +699,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+=======
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: isController
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: AutoMove
+      value: 0
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}

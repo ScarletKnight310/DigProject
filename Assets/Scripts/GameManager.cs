@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject gm;
     public GameObject player;
+    //private Movement move = player.GetComponent<Movement>();
     public int depthInc = 50;
 
     GroundManager manager;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
             manager.removeLevel();
             manager.resetBottom();
             manager.PlaceBlocks();
+      
             level++;
         }
     }
