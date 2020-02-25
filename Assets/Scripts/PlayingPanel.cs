@@ -8,6 +8,7 @@ public class PlayingPanel : MonoBehaviour
     public static PlayingPanel Instance = null;
     
     public Text DepthDisplay;
+    public Text ScoreDisplay;
 
 
     void Awake()
@@ -42,4 +43,12 @@ public class PlayingPanel : MonoBehaviour
             Debug.Log("updated text");
         }
     }
+    
+    public void ShowScore(int score)
+    {
+        if(ScoreDisplay != null)
+        {
+            ScoreDisplay.text = "Score: " + score;
+            Debug.Log("updated score");
+        }
 }
