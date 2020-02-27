@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    [Header("Mine Presets")]
+    public KeyCode mine = KeyCode.X;
     public bool autoMine = false;
     public Vector3 origin;
     public int miningPointValue = 1;
@@ -17,9 +17,9 @@ public class Mine : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        if ((collision.gameObject.tag == "Block") && (Input.GetButton("Mine") || autoMine))
+        if ((collision.gameObject.tag == "Block") && (Input.GetKey(mine) || autoMine))
             mineIt(collision.gameObject);
-        if ((collision.gameObject.tag == "Death") && (Input.GetButton("Mine") || autoMine))
+        if ((collision.gameObject.tag == "Death") && (Input.GetKey(mine) || autoMine))
             blowUp(collision.gameObject);
     }
 
@@ -27,8 +27,7 @@ public class Mine : MonoBehaviour
     {
         Depth.updateDepth((int)block.transform.position.y * -1);
         Score.updateScore(miningPointValue);
-        //Destroy(block);
-        block.SetActive(false);
+        Destroy(block);
         blockBreak.transform.position = block.transform.position;
         blockBreak.Play();
     }
@@ -36,8 +35,7 @@ public class Mine : MonoBehaviour
     public void blowUp(GameObject bomb)
     {
         Depth.updateDepth(0);
-        //Destroy(bomb);
-        bomb.SetActive(false);
+        Destroy(bomb);
         transform.position = origin;
         SendMessage("Reset");
     }

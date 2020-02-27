@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7300731598320886830}
   - component: {fileID: 7300731598320886817}
   - component: {fileID: 4966136469979815385}
-  - component: {fileID: 61504469240197881}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7300731598320886819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7300731598775974438}
@@ -115,9 +114,7 @@ MonoBehaviour:
   right: 100
   up: 119
   down: 120
-  isController: 0
   speed: 1
-  AutoMove: 1
 --- !u!135 &4966136469979815385
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -131,23 +128,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &61504469240197881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7300731598320886819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 889d26411e1fca442a665cbca5bd4118, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mine: 120
-  autoMine: 1
-  origin: {x: 0, y: 0, z: 0}
-  miningPointValue: 1
-  blockBreak: {fileID: 0}
 --- !u!1 &7300731598775974618
 GameObject:
   m_ObjectHideFlags: 0

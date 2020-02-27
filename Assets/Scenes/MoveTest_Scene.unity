@@ -272,6 +272,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: bomb_types.Array.data[0]
@@ -297,6 +298,8 @@ PrefabInstance:
       value: 0.15
       objectReference: {fileID: 0}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 7f8f795... The Controls are now intergrated into the Unity Input System
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6eb3de9ae554514db0ed5a421acff55, type: 3}
 --- !u!1001 &680234648
@@ -319,7 +322,7 @@ PrefabInstance:
     - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
@@ -366,6 +369,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: isController
@@ -528,3 +532,7 @@ MonoBehaviour:
   miningPointValue: 1
   blockBreak: {fileID: 0}
 >>>>>>> Stashed changes
+=======
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23e2e3f00f816534b98dfda242486225, type: 3}
+>>>>>>> parent of 7f8f795... The Controls are now intergrated into the Unity Input System
