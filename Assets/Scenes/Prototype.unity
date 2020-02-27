@@ -633,6 +633,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 564652645863860807, guid: 05673d4804bc63344b1fb1e9fe3d04c3,
         type: 3}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: BorderMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 1093c47359e6fac4482924ae23b2cd96, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6eb3de9ae554514db0ed5a421acff55, type: 3}
 --- !u!1 &1340582354270382038 stripped
