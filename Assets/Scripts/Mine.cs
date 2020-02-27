@@ -29,8 +29,10 @@ public class Mine : MonoBehaviour
         Score.updateScore(miningPointValue);
         //Destroy(block);
         block.SetActive(false);
-        blockBreak.transform.position = block.transform.position;
-        blockBreak.Play();
+        if (blockBreak != null) {
+            blockBreak.transform.position = block.transform.position;
+            blockBreak.Play();
+        }
     }
 
     public void blowUp(GameObject bomb)
