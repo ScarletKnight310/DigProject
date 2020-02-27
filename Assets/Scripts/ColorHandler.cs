@@ -12,7 +12,7 @@ public class ColorHandler : MonoBehaviour
 
     float currentDepth;
 
-    float maxDepth = 50.0f;
+    float maxDepth = 0.0f;
 
     float increment;
 
@@ -25,10 +25,11 @@ public class ColorHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         mr = GetComponent<MeshRenderer>(); //get renderer
 
         increment = depthColors.Count; //set increment to num of colors
+
+        maxDepth = gameObject.GetComponent<GroundManager>().MaxDepth;
     }
 
     // Update is called once per frame
