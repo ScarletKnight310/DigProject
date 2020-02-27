@@ -120,6 +120,91 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &28217236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1340582353526314180, guid: a6eb3de9ae554514db0ed5a421acff55,
+    type: 3}
+  m_PrefabInstance: {fileID: 579157624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &438316217
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4596932199446548229, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548231, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596932199446548228, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 28217236}
+    - target: {fileID: 4596932199446548228, guid: e066086569a83964281f38a7f6b02932,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2131223857}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e066086569a83964281f38a7f6b02932, type: 3}
 --- !u!1001 &579157624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,7 +285,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4049424157649377066, guid: c4d3eb4da4340474784d9ed84ca54a89,
         type: 3}
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
@@ -216,8 +300,6 @@ PrefabInstance:
 >>>>>>> Stashed changes
 =======
 >>>>>>> parent of 7f8f795... The Controls are now intergrated into the Unity Input System
-=======
->>>>>>> parent of 67cf29e... material added
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6eb3de9ae554514db0ed5a421acff55, type: 3}
 --- !u!1001 &680234648
@@ -293,6 +375,24 @@ PrefabInstance:
       propertyPath: isController
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: AutoMove
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598775974438, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 7300731598775974617, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: m_BackGroundColor.r
@@ -308,14 +408,26 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.b
       value: 0.30980393
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e2e3f00f816534b98dfda242486225, type: 3}
 --- !u!1 &776576121 stripped
+=======
+    - target: {fileID: 7300731598775974617, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: orthographic size
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23e2e3f00f816534b98dfda242486225, type: 3}
+--- !u!1 &2131223857 stripped
+>>>>>>> Stashed changes
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7300731598320886819, guid: 23e2e3f00f816534b98dfda242486225,
     type: 3}
   m_PrefabInstance: {fileID: 680234648}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &1176401500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -401,7 +513,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 579157624}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 =======
 --- !u!114 &2131223864
 MonoBehaviour:
@@ -425,5 +536,3 @@ MonoBehaviour:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e2e3f00f816534b98dfda242486225, type: 3}
 >>>>>>> parent of 7f8f795... The Controls are now intergrated into the Unity Input System
-=======
->>>>>>> parent of 67cf29e... material added
