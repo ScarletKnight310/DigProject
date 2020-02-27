@@ -16,7 +16,7 @@ public class ColorHandler : MonoBehaviour
 
     float increment;
 
-    float ColorNumber;
+    float colorNumber = 1;
 
     int cf;
 
@@ -34,16 +34,21 @@ public class ColorHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentDepth = -transform.position.y; //get current depth
+        print(colorNumber);
 
-        ColorNumber = increment * (currentDepth / maxDepth); //constrain depth to # of colors
+        if ( colorNumber > 0.0f && colorNumber < increment )
+        {
+            currentDepth = -transform.position.y; //get current depth
 
-        cf = Mathf.FloorToInt(ColorNumber); //color before where we are in the list
+            colorNumber = increment * (currentDepth / maxDepth); //constrain depth to # of colors
 
-        cc = Mathf.CeilToInt(ColorNumber); //color after where we are in the list
+            cf = Mathf.FloorToInt(colorNumber); //color before where we are in the list
 
-        newColor = Color.Lerp(depthColors[cf], depthColors[cc], (ColorNumber % 1)); //calculate current color
+            cc = Mathf.CeilToInt(colorNumber); //color after where we are in the list
 
-        mr.material.color = newColor; //display color on tile 
+            newColor = Color.Lerp(depthColors[cf], depthColors[cc], (colorNumber % 1)); //calculate current color
+
+            mr.material.color = newColor; //display color on tile
+        } 
     }
 }
