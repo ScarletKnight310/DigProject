@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class GroundManager : MonoBehaviour
 {
+    [Header("Block Types")]
+    public Material BorderMat;
     public GameObject[] block_types = new GameObject[1];
     public GameObject[] bomb_types = new GameObject[1];
     public List<GameObject> block_ref = new List<GameObject>(); 
-
+    [Space]
+    [Header("Area Range")]
     public int MaxDepth = 20;
     public int Xrange = 9;
     public int BombBuffer = 4;
@@ -67,6 +70,11 @@ public class GroundManager : MonoBehaviour
         bounds[2].transform.localScale = new Vector3((Xrange * 2) + 1, 1, 1);
         // top
         bounds[3].transform.localScale = new Vector3((Xrange * 2) + 1, 1, 1);
+        if(BorderMat!= null) {
+            for(int i = 0; i < bounds.Length; i++) {
+                bounds[i].GetComponent<MeshRenderer>().material = BorderMat;
+            }
+        }
     }
 
     public void removeLevel()
