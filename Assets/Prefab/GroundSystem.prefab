@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1340582353526314183}
   - component: {fileID: 1340582353526314182}
-  - component: {fileID: -4904766528411391077}
   m_Layer: 0
   m_Name: GroundSystem
   m_TagString: Untagged
@@ -44,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0eeace2038919a46822d87170c370ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BorderMat: {fileID: 0}
   block_types:
   - {fileID: 0}
   bomb_types:
@@ -53,22 +53,3 @@ MonoBehaviour:
   Xrange: 9
   BombBuffer: 4
   BombRate: 0.75
---- !u!114 &-4904766528411391077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340582353526314180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29ed36fa2c8754c22ac3d00d874f3abc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  depthColors:
-  - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 1, g: 0.5203068, b: 0, a: 0}
-  - {r: 0.9974991, g: 1, b: 0, a: 0}
-  - {r: 0, g: 1, b: 0.0381248, a: 0}
-  - {r: 0, g: 0.3907404, b: 1, a: 0}
-  - {r: 0.5845618, g: 0, b: 1, a: 0}

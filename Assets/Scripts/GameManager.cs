@@ -22,16 +22,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.y <= (-1*manager.MaxDepth)) {
+        if (player.transform.position.y <= (-1*GroundManager.MaxDepth)) {
             player.transform.position = new Vector3(0, 0, 0);
             if (level <= 5)
             {
-                manager.MaxDepth = manager.MaxDepth * 2;
+                GroundManager.MaxDepth = GroundManager.MaxDepth * 2;
 
             }
             else
             {
-                manager.MaxDepth = manager.MaxDepth + depthInc;
+                GroundManager.MaxDepth = GroundManager.MaxDepth + depthInc;
 
             }
             manager.removeLevel();
