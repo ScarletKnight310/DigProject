@@ -12,44 +12,60 @@ public class ColorHandler : MonoBehaviour
 
     float currentDepth;
 
-    float maxDepth = 0.0f;
+    float maxDepthInLevel;
 
     float increment;
 
-    float colorNumber = 1;
+    float colorNumber = 0.0f;
 
     int cf;
 
     int cc;
-    
+
+
+    private void Awake()
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        mr = GetComponent<MeshRenderer>(); //get renderer
+        maxDepthInLevel = GroundManager.MaxDepth;
 
         increment = depthColors.Count; //set increment to num of colors
 
-        maxDepth = gameObject.GetComponent<GroundManager>().MaxDepth;
+        mr = GetComponent<MeshRenderer>(); //get renderer
+
+        //print("color: " + colorNumber);
+        //print("increment: " + increment);
+
+        currentDepth = -transform.position.y; //get current depth and flip sign so we can do positive math
+
+        colorNumber = (increment - 1) * (currentDepth / maxDepthInLevel); //constrain depth to # of colors
+
+        cf = Mathf.FloorToInt(colorNumber); //color before where we are in the list
+
+        cc = Mathf.CeilToInt(colorNumber); //color after where we are in the list
+
+        if ((cf > -1 && cf < increment) && (cc > -1 && cc < increment))
+        {
+
+            newColor = Color.Lerp(depthColors[cf], depthColors[cc], (colorNumber % 1)); //calculate current color
+
+            mr.material.color = newColor; //display color on tile
+        }
+        else
+        {
+            //print("cf: " + cf);
+
+            //print("cc: " + cc);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        print(colorNumber);
-
-        if ( colorNumber > 0.0f && colorNumber < increment )
-        {
-            currentDepth = -transform.position.y; //get current depth
-
-            colorNumber = increment * (currentDepth / maxDepth); //constrain depth to # of colors
-
-            cf = Mathf.FloorToInt(colorNumber); //color before where we are in the list
-
-            cc = Mathf.CeilToInt(colorNumber); //color after where we are in the list
-
-            newColor = Color.Lerp(depthColors[cf], depthColors[cc], (colorNumber % 1)); //calculate current color
-
-            mr.material.color = newColor; //display color on tile
-        } 
+        
     }
 }
