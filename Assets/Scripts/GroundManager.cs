@@ -11,7 +11,7 @@ public class GroundManager : MonoBehaviour
     public List<GameObject> block_ref = new List<GameObject>(); 
     [Space]
     [Header("Area Range")]
-    public int MaxDepth = 20;
+    public static int MaxDepth = 20;
     public int Xrange = 9;
     public int BombBuffer = 4;
    // public int MaxNumBombs = 10;
