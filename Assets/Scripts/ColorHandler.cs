@@ -57,9 +57,9 @@ public class ColorHandler : MonoBehaviour
         }
         else
         {
-            print("cf: " + cf);
+            //print("cf: " + cf);
 
-            print("cc: " + cc);
+            //print("cc: " + cc);
         }
     }
 

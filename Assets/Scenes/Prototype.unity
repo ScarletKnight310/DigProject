@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1340582354270382038}
   player: {fileID: 1846762798}
+  depthInc: 50
 --- !u!4 &1290630858
 Transform:
   m_ObjectHideFlags: 0
@@ -436,8 +437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889d26411e1fca442a665cbca5bd4118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mine: 107
-  autoMine: 0
+  mine: 120
+  autoMine: 1
   origin: {x: 0, y: 0, z: 0}
 --- !u!1 &1915488209
 GameObject:
@@ -528,57 +529,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundSystem
       objectReference: {fileID: 0}
-    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
-        type: 3}
-      propertyPath: blocks.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
-        type: 3}
-      propertyPath: MaxDepth
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
-        type: 3}
-      propertyPath: bombs.Array.data[0]
-      value: 
-      objectReference: {fileID: 564652645863860807, guid: 05673d4804bc63344b1fb1e9fe3d04c3,
-        type: 3}
-    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
-        type: 3}
-      propertyPath: numOfBombs
-      value: 380
-      objectReference: {fileID: 0}
-    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
-        type: 3}
-      propertyPath: bombBuffer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
-        type: 3}
-      propertyPath: MaxNumBombs
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
-        type: 3}
-      propertyPath: Rate
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
-        type: 3}
-      propertyPath: BombRate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
-        type: 3}
-      propertyPath: Xrange
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
-        type: 3}
-      propertyPath: BombBuffer
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314183, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -634,6 +584,69 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: blocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: MaxDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: bombs.Array.data[0]
+      value: 
+      objectReference: {fileID: 564652645863860807, guid: 05673d4804bc63344b1fb1e9fe3d04c3,
+        type: 3}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: numOfBombs
+      value: 380
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: bombBuffer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: MaxNumBombs
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: Rate
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: BombRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: Xrange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: BombBuffer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: block_types.Array.data[0]
+      value: 
+      objectReference: {fileID: 4049424157649377066, guid: c4d3eb4da4340474784d9ed84ca54a89,
+        type: 3}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: bomb_types.Array.data[0]
+      value: 
+      objectReference: {fileID: 564652645863860807, guid: 05673d4804bc63344b1fb1e9fe3d04c3,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6eb3de9ae554514db0ed5a421acff55, type: 3}
 --- !u!1 &1340582354270382038 stripped
@@ -658,36 +671,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: left
-      value: 97
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: right
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: jump
-      value: 273
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: player_body
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: down
-      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
@@ -768,6 +751,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Interpolate
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: left
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: right
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: jump
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: player_body
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: down
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598775974438, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
