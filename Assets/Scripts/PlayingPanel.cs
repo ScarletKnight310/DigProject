@@ -33,14 +33,14 @@ public class PlayingPanel : MonoBehaviour
     public void ShowDepth(int depth) {
         if (DepthDisplay != null) {
             DepthDisplay.text = "Max Depth: " + depth + " Leagues";
-            Debug.Log("updated text");
+           // Debug.Log("updated text");
         }
     }
 
     public void ShowScore(int score) {
         if (ScoreDisplay != null) {
             ScoreDisplay.text = "Score: " + score;
-            Debug.Log("updated score");
+            //Debug.Log("updated score");
         }
     }
 }

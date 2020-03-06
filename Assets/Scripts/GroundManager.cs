@@ -79,7 +79,7 @@ public class GroundManager : MonoBehaviour
 
     public void removeLevel()
     {
-        print("got here");
+    //    print("got here");
         while(block_ref.Count > 0)
         {
             Destroy(block_ref[0]);

@@ -27,14 +27,15 @@ public class Movement : MonoBehaviour
         float xB = Input.GetAxis("Horizontal");
         float yB = Input.GetAxis("Vertical");
 
-        //float x = xB > tHold || xB < tHold ? Mathf.Sign(xB) : 0;
-        //float y = yB > tHold || yB < tHold ? Mathf.Sign(yB) : 0;
+        //float x = xB > 0.0 ? 1f : -1f;
+        //float y = yB > 0.0 ? 1f : -1f;
+        
+        //if (xB != 0F)
+        directx = xB;
+        //if (yB != 0)
+        directy = yB;
 
-        if (xB != 0)
-            directx = xB;
-        if (yB != 0)
-            directy = yB;
-        //Debug.Log(directx + ", " + directy);
+        Debug.Log(directx + ", " + directy);
     }
 
     private void FixedUpdate() {
