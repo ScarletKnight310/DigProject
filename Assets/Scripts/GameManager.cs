@@ -7,9 +7,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject gm;
     public GameObject player;
+    private Movement playMV;
     //private Movement move = player.GetComponent<Movement>();
     public int depthInc = 50;
-
+    public float speedAdd = .25f;
     GroundManager manager;
     int level = 1;
 
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         manager = gm.GetComponent<GroundManager>();
+        if (player != null)
+            playMV = player.GetComponent<Movement>();
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class GameManager : MonoBehaviour
             manager.removeLevel();
             manager.resetBottom();
             manager.PlaceBlocks();
-      
+            playMV.speed += speedAdd;
             level++;
         }
     }
