@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-   
-    
-
     private Rigidbody player_body = null;
     [Header("Move Control")]
     public float speed = 3f;
     public bool AutoMove = true;
-    private float directx = 0;
-    private float directy = 0;
-    private float tHold = 0.2f;
+    private float tHold = 0.001f;
+    float xB = 0.0f;
+    float yB = 0.0f;
 
     void Start()
     {
@@ -24,29 +21,27 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        float xB = Input.GetAxis("Horizontal");
-        float yB = Input.GetAxis("Vertical");
-
-        //float x = xB > 0.0 ? 1f : -1f;
-        //float y = yB > 0.0 ? 1f : -1f;
-        
-        //if (xB != 0F)
-        directx = xB;
-        //if (yB != 0)
-        directy = yB;
-
-        Debug.Log(directx + ", " + directy);
+        xB = Input.GetAxis("Horizontal");
+        yB = Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate() {
-        player_body.MovePosition(new Vector3((directx * speed * Time.deltaTime) + transform.position.x, 
-            (directy * speed * Time.deltaTime) + transform.position.y, 
+        float x = Mathf.Abs(xB) < tHold ? 0f : Mathf.Sign(xB);
+        float y = Mathf.Abs(yB) < tHold ? 0f : Mathf.Sign(yB);
+        Debug.Log(x + ", " + y);
+        if(AutoMove) {
+            if(Mathf.Abs(xB) < tHold && Mathf.Abs(yB) < tHold) {
+                y = -1f;
+            }
+        }
+        player_body.MovePosition(new Vector3((x * speed * Time.deltaTime) + transform.position.x, 
+            (y * speed * Time.deltaTime) + transform.position.y, 
             0));
     }
 
     private void Reset()
     {
-        directx = 0;
-        directy = 0;
+        xB = 0;
+        yB = 0;
     }
 }
