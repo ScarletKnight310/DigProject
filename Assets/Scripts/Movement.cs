@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     [Header("Move Control")]
     public float speed = 3f;
     public bool AutoMove = true;
-    private float tHold = 0.001f;
+    private float deadZone = 0.001f;
     float xB = 0.0f;
     float yB = 0.0f;
 
@@ -26,11 +26,11 @@ public class Movement : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        float x = Mathf.Abs(xB) < tHold ? 0f : Mathf.Sign(xB);
-        float y = Mathf.Abs(yB) < tHold ? 0f : Mathf.Sign(yB);
+        float x = Mathf.Abs(xB) < deadZone ? 0f : Mathf.Sign(xB);
+        float y = Mathf.Abs(yB) < deadZone ? 0f : Mathf.Sign(yB);
         Debug.Log(x + ", " + y);
         if(AutoMove) {
-            if(Mathf.Abs(xB) < tHold && Mathf.Abs(yB) < tHold) {
+            if(Mathf.Abs(xB) < deadZone && Mathf.Abs(yB) < deadZone) {
                 y = -1f;
             }
         }

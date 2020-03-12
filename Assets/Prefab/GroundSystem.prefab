@@ -49,7 +49,6 @@ MonoBehaviour:
   bomb_types:
   - {fileID: 0}
   block_ref: []
-  MaxDepth: 0
-  Xrange: 9
+  Xrange: 2
   BombBuffer: 4
   BombRate: 0.75

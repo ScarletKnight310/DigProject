@@ -45,8 +45,10 @@ public class GroundManager : MonoBehaviour
         }
     }
 
-    public void resetBottom() {
-        bounds[2].transform.position=new Vector3(0, -MaxDepth-1,0);
+    public void clearBounds() {
+        for (int i = 0; i < bounds.Length; i++) {
+            Destroy(bounds[i]);
+        }
     }
 
     public void CreateBounds()

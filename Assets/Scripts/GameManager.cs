@@ -39,8 +39,9 @@ public class GameManager : MonoBehaviour
 
             }
             manager.removeLevel();
-            manager.resetBottom();
+            manager.clearBounds();
             manager.PlaceBlocks();
+            manager.CreateBounds();
             playMV.speed += speedAdd;
             level++;
         }
