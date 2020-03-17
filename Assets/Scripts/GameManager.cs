@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-    public GameObject gm;
+    [Header("References")]
+    public GameObject groundM;
     public GameObject player;
     private Movement playMV;
+    [Space]
+    [Header("Level Changes")]
     //private Movement move = player.GetComponent<Movement>();
     public int depthInc = 50;
-    public float speedAdd = .25f;
+    public float speedInc = .25f;
     GroundManager manager;
     int level = 1;
 
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        manager = gm.GetComponent<GroundManager>();
+        manager = groundM.GetComponent<GroundManager>();
         if (player != null)
             playMV = player.GetComponent<Movement>();
     }
@@ -42,7 +44,7 @@ public class GameManager : MonoBehaviour
             manager.clearBounds();
             manager.PlaceBlocks();
             manager.CreateBounds();
-            playMV.speed += speedAdd;
+            playMV.speed += speedInc;
             level++;
         }
     }

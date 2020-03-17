@@ -239,10 +239,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c1099afc55ad24e9a0a393b6de1835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 1340582354270382038}
+  groundM: {fileID: 1340582354270382038}
   player: {fileID: 1846762798}
   depthInc: 50
-  speedAdd: 0.25
+  speedInc: 0.25
 --- !u!4 &1290630858
 Transform:
   m_ObjectHideFlags: 0

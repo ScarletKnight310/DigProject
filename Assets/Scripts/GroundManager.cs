@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class GroundManager : MonoBehaviour
 {
-    [Header("Block Types")]
+    [Header("Border Art")]
     public Material BorderMat;
+    [Space]
+    [Header("Block Types")]
     public GameObject[] block_types = new GameObject[1];
     public GameObject[] bomb_types = new GameObject[1];
-    public List<GameObject> block_ref = new List<GameObject>(); 
+    private List<GameObject> block_ref = new List<GameObject>(); 
     [Space]
     [Header("Area Range")]
     public static int MaxDepth = 20;
@@ -68,7 +70,7 @@ public class GroundManager : MonoBehaviour
         //-------------------------------- scale each
         bounds[0].transform.localScale = new Vector3(1,MaxDepth + 5,1);
         bounds[1].transform.localScale = new Vector3(1,MaxDepth + 5,1);
-        //bottom
+        // bottom
         bounds[2].transform.localScale = new Vector3((Xrange * 2) + 1, 1, 1);
         // top
         bounds[3].transform.localScale = new Vector3((Xrange * 2) + 1, 1, 1);
