@@ -15,8 +15,15 @@ public class Mine : MonoBehaviour
         origin = transform.position;
     }
 
-    void OnCollisionStay(Collision collision)
-    {
+   // void OnCollisionStay(Collision collision)
+  //  {
+  //      if ((collision.gameObject.tag == "Block") && (Input.GetButton("Mine") || autoMine))
+   //         mineIt(collision.gameObject);
+   //     if ((collision.gameObject.tag == "Death") && (Input.GetButton("Mine") || autoMine))
+   //         blowUp(collision.gameObject);
+   // }
+
+    void OnTriggerEnter(Collider collision) {
         if ((collision.gameObject.tag == "Block") && (Input.GetButton("Mine") || autoMine))
             mineIt(collision.gameObject);
         if ((collision.gameObject.tag == "Death") && (Input.GetButton("Mine") || autoMine))

@@ -741,7 +741,7 @@ PrefabInstance:
         type: 3}
       propertyPath: BorderMat
       value: 
-      objectReference: {fileID: 2100000, guid: 3bee63e2bedcad944811f0ab051a4d4b, type: 2}
+      objectReference: {fileID: 2100000, guid: 1093c47359e6fac4482924ae23b2cd96, type: 2}
     - target: {fileID: 1340582353526314183, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: m_LocalPosition.x
