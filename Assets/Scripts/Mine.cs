@@ -8,6 +8,7 @@ public class Mine : MonoBehaviour
     public bool autoMine = false;
     public Vector3 origin;
 
+
     void Start()
     {
         origin = transform.position;
