@@ -6,6 +6,7 @@ public class GroundManager : MonoBehaviour
 {
     public GameObject[] block_types = new GameObject[1];
     public GameObject[] bomb_types = new GameObject[1];
+    public GameObject[] followEnemies = new GameObject[1];
     public List<GameObject> block_ref = new List<GameObject>(); 
 
     public int MaxDepth = 20;
@@ -15,24 +16,28 @@ public class GroundManager : MonoBehaviour
    // public int MaxNumBombs = 10;
     public float BombRate = 0.75f;
 
-    private List<FollowEnemy> followlist = new List<FollowEnemy>();
+    private List<GameObject> followlist = new List<GameObject>();
 
     private GameObject[] bounds = new GameObject[4];
 
-    void Awake()
-    {   
+    void Awake(){   
         CreateBounds();
         PlaceBlocks();
     }
 
-    public void placeEnemies(int x, int y) {
+    public void placeEnemies(int x, int y, GameObject block) {
        for(int i=0; i < followlist.Count; i++) {
-            if (followlist[i].enabled == false) {
-                followlist[i].transform.position=new Vector3(x,y,0);
-                break;
+            var currentEnemy = followlist[i].GetComponent<FollowEnemy>();
+            if (!currentEnemy.gameObject.activeSelf) {
+                currentEnemy.gameObject.SetActive(true);
+                currentEnemy.setBlock(block);
+                currentEnemy.transform.position=new Vector3(x,y,0);
+                return;
             }
         }
-        FollowEnemy newEnemy=Instantiate(FollowEnemy, new Vector3(x,y,0));
+        int enemyIndex = Random.Range(0, followEnemies.Length - 1);
+        GameObject newEnemy=Instantiate(followEnemies[enemyIndex], new Vector3(x,y,0), Quaternion.identity);
+        newEnemy.GetComponent<FollowEnemy>().setBlock(block);
         followlist.Add(newEnemy);
     }
 
@@ -54,7 +59,7 @@ public class GroundManager : MonoBehaviour
                 }
 
                 if (Random.value <= followEnemiesRate) {
-                    placeEnemies(x,y);
+                    placeEnemies(x,y, block_ref[block_ref.Count-1]);
                 }
             }
         }
