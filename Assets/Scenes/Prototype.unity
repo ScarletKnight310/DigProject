@@ -647,7 +647,7 @@ PrefabInstance:
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: BombRate
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}

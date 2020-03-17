@@ -11,8 +11,11 @@ public class GroundManager : MonoBehaviour
     public int MaxDepth = 20;
     public int Xrange = 9;
     public int BombBuffer = 4;
+    public float followEnemiesRate = .75f;
    // public int MaxNumBombs = 10;
     public float BombRate = 0.75f;
+
+    private List<FollowEnemy> followlist = new List<FollowEnemy>();
 
     private GameObject[] bounds = new GameObject[4];
 
@@ -20,6 +23,17 @@ public class GroundManager : MonoBehaviour
     {   
         CreateBounds();
         PlaceBlocks();
+    }
+
+    public void placeEnemies(int x, int y) {
+       for(int i=0; i < followlist.Count; i++) {
+            if (followlist[i].enabled == false) {
+                followlist[i].transform.position=new Vector3(x,y,0);
+                break;
+            }
+        }
+        FollowEnemy newEnemy=Instantiate(FollowEnemy, new Vector3(x,y,0));
+        followlist.Add(newEnemy);
     }
 
     public void PlaceBlocks()
@@ -37,6 +51,10 @@ public class GroundManager : MonoBehaviour
                 else
                 {
                     block_ref.Add(Instantiate(block_types[Random.Range(0, block_types.Length)], new Vector3(x, y, 0), Quaternion.identity));
+                }
+
+                if (Random.value <= followEnemiesRate) {
+                    placeEnemies(x,y);
                 }
             }
         }
