@@ -7,8 +7,11 @@ public class Mine : MonoBehaviour
     [Header("Mine Presets")]
     public bool autoMine = false;
     public Vector3 origin;
-    public int miningPointValue = 1;
     public ParticleSystem blockBreak;
+    [Header("Point Changes")]
+    public int miningPointValue = 1;
+    public int pointLoss = 2;
+    
 
     void Start()
     {
@@ -45,6 +48,7 @@ public class Mine : MonoBehaviour
     public void blowUp(GameObject bomb)
     {
         Depth.updateDepth(0);
+        Score.updateScore(-pointLoss);
         //Destroy(bomb);
         bomb.SetActive(false);
         transform.position = origin;
