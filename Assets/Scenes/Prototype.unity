@@ -429,22 +429,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7300731599010087590}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1846762799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846762798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 889d26411e1fca442a665cbca5bd4118, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoMine: 1
-  origin: {x: 0, y: 0, z: 0}
-  miningPointValue: 1
-  blockBreak: {fileID: 0}
 --- !u!1 &1915488209
 GameObject:
   m_ObjectHideFlags: 0

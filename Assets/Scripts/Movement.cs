@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
-{
+public class Movement : MonoBehaviour {
     private Rigidbody player_body = null;
     [Header("Move Control")]
     public float speed = 3f;
@@ -12,20 +11,26 @@ public class Movement : MonoBehaviour
     float xB = 0.0f;
     float yB = 0.0f;
 
+    public static Movement instance = null;
+
+    public void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+    }
+
     public void zero() {
         Reset();
         player_body.velocity = Vector3.zero;
     }
 
-    void Start()
-    {
+    void Start() {
         if (player_body == null)
             player_body = gameObject.GetComponent<Rigidbody>();
         player_body.useGravity = false;
     }
 
-    void Update()
-    {
+    void Update() {
         xB = Input.GetAxis("Horizontal");
         yB = Input.GetAxis("Vertical");
     }
@@ -33,19 +38,18 @@ public class Movement : MonoBehaviour
     private void FixedUpdate() {
         float x = Mathf.Abs(xB) < deadZone ? 0f : Mathf.Sign(xB);
         float y = Mathf.Abs(yB) < deadZone ? 0f : Mathf.Sign(yB);
-        Debug.Log(x + ", " + y);
-        if(AutoMove) {
-            if(Mathf.Abs(xB) < deadZone && Mathf.Abs(yB) < deadZone) {
-                y = -1f;
+        //Debug.Log(x + ", " + y);
+        if (AutoMove) {
+            if (Mathf.Abs(xB) < deadZone && Mathf.Abs(yB) < deadZone) {
+                // y = -1f;
             }
         }
-        player_body.MovePosition(new Vector3((x * speed * Time.deltaTime) + transform.position.x, 
-            (y * speed * Time.deltaTime) + transform.position.y, 
+        player_body.MovePosition(new Vector3((x * speed * Time.deltaTime) + transform.position.x,
+            (y * speed * Time.deltaTime) + transform.position.y,
             0));
     }
 
-    private void Reset()
-    {
+    private void Reset() {
         xB = 0;
         yB = 0;
     }
