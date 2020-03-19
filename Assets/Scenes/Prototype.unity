@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DepthDisplay: {fileID: 1915488211}
+  ScoreDisplay: {fileID: 0}
   LevelDisplay: {fileID: 2145474681}
 --- !u!114 &1011140746
 MonoBehaviour:
@@ -239,9 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c1099afc55ad24e9a0a393b6de1835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 1340582354270382038}
+  groundM: {fileID: 1340582354270382038}
   player: {fileID: 1846762798}
   depthInc: 50
+  speedInc: 0.25
 --- !u!4 &1290630858
 Transform:
   m_ObjectHideFlags: 0
@@ -439,9 +441,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889d26411e1fca442a665cbca5bd4118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mine: 107
   autoMine: 1
   origin: {x: 0, y: 0, z: 0}
+  miningPointValue: 1
+  blockBreak: {fileID: 0}
 --- !u!1 &1915488209
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +650,7 @@ PrefabInstance:
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: BombRate
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
@@ -671,6 +674,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 564652645863860807, guid: 05673d4804bc63344b1fb1e9fe3d04c3,
         type: 3}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: followEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 8333279694884481960, guid: a463d925cdeb2304191dc7d0399f1a92,
+        type: 3}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: followEnemiesRate
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314183, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: m_LocalPosition.x

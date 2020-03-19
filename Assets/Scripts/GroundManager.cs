@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class GroundManager : MonoBehaviour
 {
+    [Header("Border Art")]
+    public Material BorderMat;
+    [Space]
+    [Header("Block Types")]
     public GameObject[] block_types = new GameObject[1];
     public GameObject[] bomb_types = new GameObject[1];
+
     public GameObject[] followEnemies = new GameObject[1];
     public List<GameObject> block_ref = new List<GameObject>(); 
 
-    public int MaxDepth = 20;
+    [Space]
+    [Header("Area Range")]
+    public static int MaxDepth = 20;
+
     public int Xrange = 9;
     public int BombBuffer = 4;
     public float followEnemiesRate = .75f;
@@ -65,8 +73,10 @@ public class GroundManager : MonoBehaviour
         }
     }
 
-    public void resetBottom() {
-        bounds[2].transform.position=new Vector3(0, -MaxDepth-1,0);
+    public void clearBounds() {
+        for (int i = 0; i < bounds.Length; i++) {
+            Destroy(bounds[i]);
+        }
     }
 
     public void CreateBounds()
@@ -86,15 +96,20 @@ public class GroundManager : MonoBehaviour
         //-------------------------------- scale each
         bounds[0].transform.localScale = new Vector3(1,MaxDepth + 5,1);
         bounds[1].transform.localScale = new Vector3(1,MaxDepth + 5,1);
-        //bottom
+        // bottom
         bounds[2].transform.localScale = new Vector3((Xrange * 2) + 1, 1, 1);
         // top
         bounds[3].transform.localScale = new Vector3((Xrange * 2) + 1, 1, 1);
+        if(BorderMat!= null) {
+            for(int i = 0; i < bounds.Length; i++) {
+                bounds[i].GetComponent<MeshRenderer>().material = BorderMat;
+            }
+        }
     }
 
     public void removeLevel()
     {
-        print("got here");
+    //    print("got here");
         while(block_ref.Count > 0)
         {
             Destroy(block_ref[0]);

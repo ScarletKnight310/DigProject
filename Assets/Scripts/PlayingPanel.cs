@@ -6,30 +6,33 @@ using UnityEngine.UI;
 public class PlayingPanel : MonoBehaviour
 {
     public static PlayingPanel Instance = null;
-    
+
     public Text DepthDisplay;
+    public Text ScoreDisplay;
 
     public Text LevelDisplay;
 
 
-    void Awake()
-    {
+    void Awake() {
         if (Instance == null) //singleton
         {
             Instance = this;
-        }
-        else
-        {
+        } else {
             Destroy(gameObject);
         }
     }
 
-    public void ShowDepth(int depth)
-    {
-        if(DepthDisplay != null)
-        {
+    public void ShowDepth(int depth) {
+        if (DepthDisplay != null) {
             DepthDisplay.text = "Max Depth: " + depth + " Leagues";
-            Debug.Log("updated text");
+           // Debug.Log("updated text");
+        }
+    }
+
+    public void ShowScore(int score) {
+        if (ScoreDisplay != null) {
+            ScoreDisplay.text = "Score: " + score;
+            //Debug.Log("updated score");
         }
     }
 
