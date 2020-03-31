@@ -174,6 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DepthDisplay: {fileID: 1915488211}
   ScoreDisplay: {fileID: 1760186327}
+  LevelDisplay: {fileID: 0}
 --- !u!114 &1011140746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,6 +743,17 @@ PrefabInstance:
       propertyPath: BorderMat
       value: 
       objectReference: {fileID: 2100000, guid: 1093c47359e6fac4482924ae23b2cd96, type: 2}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: followEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 673846721028525371, guid: a463d925cdeb2304191dc7d0399f1a92,
+        type: 3}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: followEnemiesRate
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314183, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -822,11 +834,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 61504469240197881, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: blockBreak
-      value: 
-      objectReference: {fileID: 1471782851}
     - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: speed
@@ -987,5 +994,10 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 61504469240197881, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: blockBreak
+      value: 
+      objectReference: {fileID: 1471782851}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e2e3f00f816534b98dfda242486225, type: 3}

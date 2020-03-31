@@ -15,6 +15,14 @@ public class Movement : MonoBehaviour
     float lastx = 0.0f;
     float lasty = 0.0f;
 
+    public static Movement instance = null;
+
+    public void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+    }
+
     void Start()
     {
         if (player_body == null)
@@ -52,5 +60,10 @@ public class Movement : MonoBehaviour
     {
         xB = 0;
         yB = 0;
+    }
+
+    public void zero() {
+        Reset();
+        player_body.velocity = Vector3.zero;
     }
 }

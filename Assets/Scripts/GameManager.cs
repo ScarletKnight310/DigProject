@@ -18,11 +18,12 @@ public class GameManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Awake()
-    {
+    void Awake() {
         manager = groundM.GetComponent<GroundManager>();
-        if (player != null)
-            playMV = player.GetComponent<Movement>();
+        PlayingPanel.Instance.ShowLevel(level);
+        if (player != null) { 
+        playMV = player.GetComponent<Movement>();
+        }
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     {
         if (player.transform.position.y <= (-1*GroundManager.MaxDepth)) {
             player.transform.position = new Vector3(0, 0, 0);
+            player.GetComponent<Movement>().zero();
             if (level <= 5)
             {
                 GroundManager.MaxDepth = GroundManager.MaxDepth * 2;
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
             manager.CreateBounds();
             playMV.speed += speedInc;
             level++;
+            PlayingPanel.Instance.ShowLevel(level);
         }
     }
 }
+

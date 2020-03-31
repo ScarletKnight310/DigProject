@@ -10,6 +10,7 @@ public class PlayingPanel : MonoBehaviour
     public Text DepthDisplay;
     public Text ScoreDisplay;
 
+    public Text LevelDisplay;
 
     void Awake() {
         if (Instance == null) //singleton
@@ -18,16 +19,6 @@ public class PlayingPanel : MonoBehaviour
         } else {
             Destroy(gameObject);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start() {
-
-    }
-
-    // Update is called once per frame
-    void Update() {
-
     }
 
     public void ShowDepth(int depth) {
@@ -40,6 +31,13 @@ public class PlayingPanel : MonoBehaviour
     public void ShowScore(int score) {
         if (ScoreDisplay != null) {
             ScoreDisplay.text = "Score: " + score;
+            //Debug.Log("updated score");
+        }
+    }
+
+    public void ShowLevel(int level) {
+        if (ScoreDisplay != null) {
+            ScoreDisplay.text = "Level: " + level;
             //Debug.Log("updated score");
         }
     }
