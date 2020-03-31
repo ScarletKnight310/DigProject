@@ -36,8 +36,8 @@ public class PlayingPanel : MonoBehaviour
     }
 
     public void ShowLevel(int level) {
-        if (ScoreDisplay != null) {
-            ScoreDisplay.text = "Level: " + level;
+        if (LevelDisplay != null) {
+            LevelDisplay.text = "Level: " + level;
             //Debug.Log("updated score");
         }
     }
