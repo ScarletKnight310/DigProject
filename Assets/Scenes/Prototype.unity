@@ -792,7 +792,7 @@ PrefabInstance:
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: BombRate
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
@@ -1077,5 +1077,10 @@ PrefabInstance:
       propertyPath: blockBreak
       value: 
       objectReference: {fileID: 1471782851}
+    - target: {fileID: 61504469240197881, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: autoMine
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e2e3f00f816534b98dfda242486225, type: 3}
