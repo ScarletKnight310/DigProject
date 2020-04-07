@@ -33,6 +33,10 @@ public class Mine : MonoBehaviour
 
     public void mineIt(GameObject block)
     {
+        GameObject hiddenEnemy;
+        if (GroundManager.instance.blockToEnemy.TryGetValue(block,out hiddenEnemy)) {
+            hiddenEnemy.SendMessage("setUncovered",true);
+        }
         Depth.updateDepth((int)block.transform.position.y * -1);
         Score.updateScore(miningPointValue);
         //Destroy(block);

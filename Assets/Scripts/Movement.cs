@@ -36,6 +36,7 @@ public class Movement : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+        player_body.velocity = Vector3.zero;
         float x = Mathf.Abs(xB) < deadZone ? 0f : Mathf.Sign(xB);
         float y = Mathf.Abs(yB) < deadZone ? 0f : Mathf.Sign(yB);
         //Debug.Log(x + ", " + y);
@@ -47,6 +48,7 @@ public class Movement : MonoBehaviour {
         player_body.MovePosition(new Vector3((x * speed * Time.deltaTime) + transform.position.x,
             (y * speed * Time.deltaTime) + transform.position.y,
             0));
+        
     }
 
     private void Reset() {

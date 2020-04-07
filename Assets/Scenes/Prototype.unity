@@ -667,7 +667,12 @@ PrefabInstance:
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: followEnemiesRate
-      value: 0.05
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: offset.x
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314183, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
@@ -778,6 +783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: down
       value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: AutoMove
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
