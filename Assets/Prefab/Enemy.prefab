@@ -131,11 +131,11 @@ MonoBehaviour:
   delayTimer: 0
   c: {fileID: 0}
   brakeFactor: 0.9
-  intelligenceFactor: 1
-  randBrakeFactor: 0
-  randForceFactor: 0
+  intelligenceFactor: 0.75
+  randBrakeFactor: 0.1
+  randForceFactor: 0.05
   randIntelligence: 0
-  numBody: 1
+  numBody: 2
   followBody:
   - {fileID: 1478940816346918231, guid: 9fed99a67fdd74a46afb29fa7b0674a6, type: 3}
   body: []

@@ -124,5 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   previous: {fileID: 0}
-  minDistance: 2
-  force: 0
+  minDistance: 1.1
+  force: 100
