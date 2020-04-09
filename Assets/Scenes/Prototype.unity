@@ -825,7 +825,7 @@ PrefabInstance:
         type: 3}
       propertyPath: followEnemies.Array.data[0]
       value: 
-      objectReference: {fileID: 673846721028525371, guid: a463d925cdeb2304191dc7d0399f1a92,
+      objectReference: {fileID: 8333279694884481960, guid: a463d925cdeb2304191dc7d0399f1a92,
         type: 3}
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}

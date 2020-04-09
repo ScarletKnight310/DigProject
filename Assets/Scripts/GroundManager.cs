@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundManager : MonoBehaviour {
+
+    public static GroundManager instance = null;
+
     [Header("Border Art")]
     public Material BorderMat;
     [Space]
@@ -11,7 +14,10 @@ public class GroundManager : MonoBehaviour {
     public GameObject[] bomb_types = new GameObject[1];
 
     public GameObject[] followEnemies = new GameObject[1];
+
     public List<GameObject> block_ref = new List<GameObject>();
+
+    public Dictionary<GameObject, GameObject> blockToEnemy = new Dictionary<GameObject, GameObject>();
 
     [Space]
     [Header("Area Range")]
@@ -27,7 +33,12 @@ public class GroundManager : MonoBehaviour {
 
     private GameObject[] bounds = new GameObject[4];
 
+    public Vector3 offset;
+
     void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
         CreateBounds();
         PlaceBlocks();
     }
@@ -36,16 +47,23 @@ public class GroundManager : MonoBehaviour {
         for (int i = 0; i < followlist.Count; i++) {
             var currentEnemy = followlist[i].GetComponent<FollowEnemy>();
             if (!currentEnemy.gameObject.activeSelf) {
+                currentEnemy.uncovered = false;
+                currentEnemy.setBodyActive(false);
                 currentEnemy.gameObject.SetActive(true);
                 currentEnemy.setBlock(block);
                 currentEnemy.transform.position = new Vector3(x, y, 0);
+                currentEnemy.spawn(offset);
+                blockToEnemy.Add(block, currentEnemy.gameObject);
                 return;
             }
         }
         int enemyIndex = Random.Range(0, followEnemies.Length - 1);
         GameObject newEnemy = Instantiate(followEnemies[enemyIndex], new Vector3(x, y, 0), Quaternion.identity);
-        newEnemy.GetComponent<FollowEnemy>().setBlock(block);
+        FollowEnemy head = newEnemy.GetComponent<FollowEnemy>();
+        head.setBlock(block);
+        head.spawn(offset);
         followlist.Add(newEnemy);
+        blockToEnemy.Add(block, newEnemy);
     }
 
     public void PlaceBlocks() {
@@ -100,9 +118,10 @@ public class GroundManager : MonoBehaviour {
 
     public void removeLevel() {
         //    print("got here");
-        while (block_ref.Count > 0) {
-            Destroy(block_ref[0]);
-            block_ref.RemoveAt(0);
+        for(int i = 0; i < block_ref.Count; i++) {
+            Destroy(block_ref[i]);   
         }
+        block_ref.Clear();
+        blockToEnemy.Clear();
     }
 }

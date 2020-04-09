@@ -7,11 +7,9 @@ public class Mine : MonoBehaviour
     [Header("Mine Presets")]
     public bool autoMine = false;
     public Vector3 origin;
-    public ParticleSystem blockBreak;
-    [Header("Point Changes")]
     public int miningPointValue = 1;
-    public int pointLoss = 2;
-    
+    public ParticleSystem blockBreak;
+
 
     void Start()
     {
@@ -35,6 +33,10 @@ public class Mine : MonoBehaviour
 
     public void mineIt(GameObject block)
     {
+        GameObject hiddenEnemy;
+        if (GroundManager.instance.blockToEnemy.TryGetValue(block,out hiddenEnemy)) {
+            hiddenEnemy.SendMessage("setUncovered",true);
+        }
         Depth.updateDepth((int)block.transform.position.y * -1);
         Score.updateScore(miningPointValue);
         //Destroy(block);
@@ -48,7 +50,6 @@ public class Mine : MonoBehaviour
     public void blowUp(GameObject bomb)
     {
         Depth.updateDepth(0);
-        Score.updateScore(-pointLoss);
         //Destroy(bomb);
         bomb.SetActive(false);
         transform.position = origin;

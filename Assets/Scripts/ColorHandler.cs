@@ -23,11 +23,6 @@ public class ColorHandler : MonoBehaviour
     int cc;
 
 
-    private void Awake()
-    {
-
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -63,9 +58,4 @@ public class ColorHandler : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

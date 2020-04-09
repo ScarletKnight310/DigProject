@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake() {
         manager = groundM.GetComponent<GroundManager>();
-        PlayingPanel.Instance.ShowLevel(level);
+        PlayingPanel.Instance.showLevel(level);
         if (player != null) { 
         playMV = player.GetComponent<Movement>();
         }
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
             manager.CreateBounds();
             playMV.speed += speedInc;
             level++;
-            PlayingPanel.Instance.ShowLevel(level);
+            PlayingPanel.Instance.showLevel(level);
         }
     }
 }

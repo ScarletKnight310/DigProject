@@ -12,6 +12,7 @@ public class PlayingPanel : MonoBehaviour
 
     public Text LevelDisplay;
 
+
     void Awake() {
         if (Instance == null) //singleton
         {
@@ -35,10 +36,10 @@ public class PlayingPanel : MonoBehaviour
         }
     }
 
-    public void ShowLevel(int level) {
+
+    public void showLevel(int level) {
         if (LevelDisplay != null) {
             LevelDisplay.text = "Level: " + level;
-            //Debug.Log("updated score");
         }
     }
 }
