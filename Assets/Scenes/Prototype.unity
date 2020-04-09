@@ -338,7 +338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1451749689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,7 +628,7 @@ PrefabInstance:
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: Xrange
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
@@ -680,7 +680,7 @@ PrefabInstance:
     - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.18
+      value: -11.3
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
@@ -727,6 +727,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886830, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: m_UseGravity
@@ -755,7 +770,7 @@ PrefabInstance:
     - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: speed
-      value: 4
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
@@ -820,7 +835,7 @@ PrefabInstance:
     - target: {fileID: 7300731598775974617, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: orthographic size
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e2e3f00f816534b98dfda242486225, type: 3}

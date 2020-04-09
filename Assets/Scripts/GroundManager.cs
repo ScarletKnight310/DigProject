@@ -11,7 +11,7 @@ public class GroundManager : MonoBehaviour
     // public int MaxDepth = 20;
     [Header("Area Range")]
     
-    public static int MaxDepth = 20;
+    public static int MaxDepth = 100;
     public int Xrange = 9;
     public int BombBuffer = 4;
    // public int MaxNumBombs = 10;
