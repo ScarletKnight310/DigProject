@@ -51,7 +51,7 @@ public class ColorHandler : MonoBehaviour
         if ((cf > -1 && cf < increment) && (cc > -1 && cc < increment))
         {
 
-            newColor = Color.Lerp(depthColors[cf], depthColors[cc], (colorNumber % 1)); //calculate current color
+            newColor = Color.Lerp(depthColors[cf], depthColors[cc], (colorNumber % 1)); //calculate color between the 2 in list
 
             mr.material.color = newColor; //display color on tile
         }
