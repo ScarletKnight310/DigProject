@@ -41,7 +41,11 @@ public class GroundManager : MonoBehaviour
                 }
                 else
                 {
-                    block_ref.Add(Instantiate(block_types[Random.Range(0, block_types.Length)], new Vector3(x, y, 0), Quaternion.identity));
+                    var newTile = Instantiate(block_types[Random.Range(0, block_types.Length)], new Vector3(x, y, 0), Quaternion.identity);
+                    var mr = newTile.GetComponent<MeshRenderer>();
+                    mr.material.SetFloat("maxDepthInLevel", MaxDepth);
+                    block_ref.Add(newTile);
+
                 }
             }
         }

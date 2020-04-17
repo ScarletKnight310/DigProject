@@ -31,6 +31,8 @@ public class ColorHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         maxDepthInLevel = GroundManager.MaxDepth;
 
         increment = depthColors.Count; //set increment to num of colors
