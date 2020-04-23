@@ -24,7 +24,7 @@ SubShader {
     Pass {
         CGPROGRAM
 // Upgrade NOTE: excluded shader from DX11; has structs without semantics (struct v2f members wpos)
-//#pragma exclude_renderers d3d11
+			#pragma exclude_renderers d3d11
             #pragma vertex vert
             #pragma fragment frag
             #pragma target 3.0

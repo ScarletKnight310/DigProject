@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: STONE
-  m_Shader: {fileID: 4800000, guid: 5aaea47aff47f451ab5d595e2d02a6e6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 80b9ad59f15be1a47aec09a5a35cb8a3, type: 3}
   m_ShaderKeywords: _EMISSION _GLOSSYREFLECTIONS_OFF _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
@@ -92,9 +92,11 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
+    - __dirty: 1
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1, g: 0, b: 0, a: 1}
+    - _Color0: {r: 0.9056604, g: 0.1153435, b: 0.7765018, a: 0}
     - _Color1: {r: 1, g: 0.49685895, b: 0, a: 1}
     - _Color2: {r: 0.985917, g: 1, b: 0, a: 1}
     - _Color3: {r: 0, g: 1, b: 0, a: 1}
@@ -102,4 +104,5 @@ Material:
     - _Color5: {r: 0.6536274, g: 0, b: 1, a: 1}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MainColor: {r: 0.112362, g: 0.8871241, b: 0.9528302, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}

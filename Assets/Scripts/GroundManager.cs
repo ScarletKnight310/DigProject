@@ -14,12 +14,18 @@ public class GroundManager : MonoBehaviour
     [Space]
     [Header("Area Range")]
     public static int MaxDepth = 100;
+
     public int Xrange = 9;
     public int BombBuffer = 4;
    // public int MaxNumBombs = 10;
     public float BombRate = 0.75f;
 
     private GameObject[] bounds = new GameObject[4];
+
+    //for shader
+    public Material stoneMat;
+
+   
 
     void Awake()
     {   
