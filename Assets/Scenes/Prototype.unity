@@ -228,8 +228,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1915488210}
+<<<<<<< HEAD
   - {fileID: 1760186326}
   - {fileID: 559325468}
+=======
+  - {fileID: 2145474680}
+>>>>>>> EnemyAi
   m_Father: {fileID: 1451749692}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -251,8 +255,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DepthDisplay: {fileID: 1915488211}
+<<<<<<< HEAD
   ScoreDisplay: {fileID: 1760186327}
   LevelDisplay: {fileID: 559325469}
+=======
+  ScoreDisplay: {fileID: 0}
+  LevelDisplay: {fileID: 2145474681}
+>>>>>>> EnemyAi
 --- !u!114 &1011140746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +330,11 @@ MonoBehaviour:
   groundM: {fileID: 1340582354270382038}
   player: {fileID: 1846762798}
   depthInc: 50
+<<<<<<< HEAD
   speedInc: 1
+=======
+  speedInc: 0.25
+>>>>>>> EnemyAi
 --- !u!4 &1290630858
 Transform:
   m_ObjectHideFlags: 0
@@ -605,6 +618,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1760186325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -664,6 +678,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7300731599010087590}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> EnemyAi
 --- !u!1 &1915488209
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +756,83 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915488209}
+  m_CullTransparentMesh: 0
+--- !u!1 &2145474679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145474680}
+  - component: {fileID: 2145474682}
+  - component: {fileID: 2145474681}
+  m_Layer: 5
+  m_Name: Level Display
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2145474680
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145474679}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1011140744}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 163.91, y: -79}
+  m_SizeDelta: {x: 327.82, y: 98.62}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2145474681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145474679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 26
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 86
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Level: 1'
+--- !u!222 &2145474682
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145474679}
   m_CullTransparentMesh: 0
 --- !u!1001 &1340582354270382037
 PrefabInstance:
@@ -818,11 +911,14 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
+<<<<<<< HEAD
       propertyPath: BorderMat
       value: 
       objectReference: {fileID: 2100000, guid: 1093c47359e6fac4482924ae23b2cd96, type: 2}
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
+=======
+>>>>>>> EnemyAi
       propertyPath: followEnemies.Array.data[0]
       value: 
       objectReference: {fileID: 8333279694884481960, guid: a463d925cdeb2304191dc7d0399f1a92,
@@ -830,7 +926,16 @@ PrefabInstance:
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: followEnemiesRate
+<<<<<<< HEAD
       value: 0.05
+=======
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
+        type: 3}
+      propertyPath: offset.x
+      value: 0.4
+>>>>>>> EnemyAi
       objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314183, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
@@ -944,6 +1049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
+<<<<<<< HEAD
       propertyPath: isController
       value: 1
       objectReference: {fileID: 0}
@@ -951,6 +1057,10 @@ PrefabInstance:
         type: 3}
       propertyPath: AutoMove
       value: 1
+=======
+      propertyPath: AutoMove
+      value: 0
+>>>>>>> EnemyAi
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
