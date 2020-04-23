@@ -26,8 +26,6 @@ public class ColorHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
         maxDepthInLevel = GroundManager.MaxDepth;
 
         increment = depthColors.Count; //set increment to num of colors
@@ -48,7 +46,7 @@ public class ColorHandler : MonoBehaviour
         if ((cf > -1 && cf < increment) && (cc > -1 && cc < increment))
         {
 
-            newColor = Color.Lerp(depthColors[cf], depthColors[cc], (colorNumber % 1)); //calculate color between the 2 in list
+            newColor = Color.Lerp(depthColors[cf], depthColors[cc], (colorNumber % 1)); //calculate current color
 
             mr.material.color = newColor; //display color on tile
         }
