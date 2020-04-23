@@ -73,9 +73,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-<<<<<<< HEAD:Assets/Materials/Blue.mat
     - _Color: {r: 0.29590935, g: 0.29125133, b: 0.7264151, a: 1}
-=======
-    - _Color: {r: 0.67610466, g: 0.14960839, b: 0.7735849, a: 1}
->>>>>>> EnemyAi:Assets/Materials/New Material.mat
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

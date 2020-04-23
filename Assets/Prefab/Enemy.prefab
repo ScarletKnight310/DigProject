@@ -60,11 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-<<<<<<< HEAD
   - {fileID: 2100000, guid: e9812df049de6a748b206e06dbb905e4, type: 2}
-=======
-  - {fileID: 2100000, guid: 43182f7ec5753e44d9bc4e2292aeb89b, type: 2}
->>>>>>> EnemyAi
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,10 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bb307e51c5a8f408b5d78d8701e30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   uncovered: 0
-=======
->>>>>>> EnemyAi
   player: {fileID: 0}
   rb: {fileID: 0}
   force: 100
