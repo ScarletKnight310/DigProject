@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     [Header("Move Control")]
     public float speed = 3f;
     public bool AutoMove = true;
-    private float deadZone = 0.000000001f;
+    private float deadZone = 0.00000000001f;
     float xB = 0.0f;
     float yB = 0.0f;
 
