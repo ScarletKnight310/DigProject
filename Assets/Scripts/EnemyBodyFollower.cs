@@ -12,7 +12,7 @@ public class EnemyBodyFollower : MonoBehaviour
     public float minDistance = 2f;
     private SphereCollider c;
     public float force;
-    private Rigidbody rb;
+    public Rigidbody rb;
 
     public void setIsActive(bool isActive) {
         this.isActive = isActive;
@@ -29,7 +29,7 @@ public class EnemyBodyFollower : MonoBehaviour
         this.previous = previous;
     }
 
-    public void Update() {
+    public void SometimesUpdate(float deltaTime) {
         if (isActive) {
             if (previous != null&&Vector3.Distance(transform.position, previous.transform.position)>minDistance) {
                 Vector3 dir = previous.transform.position - transform.position;
@@ -37,7 +37,7 @@ public class EnemyBodyFollower : MonoBehaviour
                 if(rb.velocity.x*dir.x<0 || rb.velocity.y * dir.y < 0) {
                     rb.velocity = Vector3.zero;
                 }
-                rb.AddForce(dir * force*Time.deltaTime);
+                rb.AddForce(dir * force*deltaTime);
             } else {
                 rb.velocity = Vector3.zero;
             }

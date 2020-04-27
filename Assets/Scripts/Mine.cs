@@ -34,7 +34,13 @@ public class Mine : MonoBehaviour
     public void mineIt(GameObject block)
     {
         GameObject hiddenEnemy;
-        if (GroundManager.instance.blockToEnemy.TryGetValue(block,out hiddenEnemy)) {
+        if (GroundManager.instance == null) {
+            print("Instance null");
+        }
+        if (GroundManager.instance.blockToEnemy == null) {
+            print("block to enemy null");
+        }
+        if (GroundManager.instance.blockToEnemy.TryGetValue(block, out hiddenEnemy)) {
             hiddenEnemy.SendMessage("setUncovered",true);
         }
         Depth.updateDepth((int)block.transform.position.y * -1);

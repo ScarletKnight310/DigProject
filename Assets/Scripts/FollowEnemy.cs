@@ -25,8 +25,8 @@ public class FollowEnemy : MonoBehaviour {
 
 
     public int numBody = 1;
-    public GameObject[] followBody = new GameObject[1];
-    public GameObject[] body;
+    public GameObject[] followBodyType = new GameObject[1];
+    public EnemyBodyFollower[] body;
 
     public void setUncovered(bool uncovered) {
         this.uncovered = uncovered;
@@ -35,8 +35,8 @@ public class FollowEnemy : MonoBehaviour {
     }
 
     public void setBodyActive(bool active) {
-        foreach(GameObject g in body) {
-            g.GetComponent<EnemyBodyFollower>().isActive = active;
+        foreach(EnemyBodyFollower g in body) {
+            g.isActive = active;
         }
     }
 
@@ -48,7 +48,7 @@ public class FollowEnemy : MonoBehaviour {
         c.isTrigger = true;
         //print(c.isTrigger);
 
-        body = new GameObject[numBody];
+        body = new EnemyBodyFollower[numBody];
 
         actualForce = force + (force * (randForceFactor * Random.value));
         actualBrakeFactor=brakeFactor+(brakeFactor*(randBrakeFactor*Random.value));
@@ -59,25 +59,26 @@ public class FollowEnemy : MonoBehaviour {
 
         GameObject prev=gameObject;
         for (int i = 0; i < body.Length; i++) {
-            int BodyIndex = Random.Range(0, followBody.Length - 1);
-            body[i] = Instantiate(followBody[BodyIndex], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-            body[i].GetComponent<EnemyBodyFollower>().setPositionTrain(gameObject, prev);
-            prev = body[i];
+            int BodyIndex = Random.Range(0, followBodyType.Length - 1);
+            GameObject newBody=Instantiate(followBodyType[BodyIndex], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            body[i]=newBody.GetComponent<EnemyBodyFollower>();
+            body[i].setPositionTrain(gameObject, prev);
+            prev = newBody;
         }
     }
 
     public void spawn(Vector3 offset) {
         Vector3 newPostion = transform.position + offset;
-        foreach(GameObject b in body) {
+        foreach(EnemyBodyFollower b in body) {
             b.transform.position = newPostion;
             newPostion += offset;
-            b.SetActive(true);
+            b.gameObject.SetActive(true);
         }
     }
 
     public void die() {
-        foreach(GameObject b in body) {
-            b.SetActive(false);
+        foreach(EnemyBodyFollower b in body) {
+            b.gameObject.SetActive(false);
         }
         gameObject.SetActive(false);
     }
@@ -86,9 +87,12 @@ public class FollowEnemy : MonoBehaviour {
         this.block = block;
     }
 
-    public void Update() {
+    public void SometimesUpdate(float deltaTime) {
         if (uncovered) {
             if (delayTimer <= 0) {
+                foreach(EnemyBodyFollower b in body) {
+                    b.SometimesUpdate(deltaTime);
+                }
                 if (Random.value < actualIntelligence) {
                     Vector3 dir = player.transform.position - transform.position;
                     dir.Normalize();
@@ -96,8 +100,8 @@ public class FollowEnemy : MonoBehaviour {
                         rb.velocity *= actualBrakeFactor;
                     }
                     rb.AddForce(dir * actualForce*Time.deltaTime);
-                    foreach(GameObject b in body) {
-                        b.GetComponent<Rigidbody>().AddForce(dir * actualForce * Time.deltaTime * 0.2f);
+                    foreach(EnemyBodyFollower b in body) {
+                        b.rb.AddForce(dir * actualForce * deltaTime * 0.2f);
                     }
                 }
             } else {

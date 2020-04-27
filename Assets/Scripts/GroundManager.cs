@@ -29,11 +29,31 @@ public class GroundManager : MonoBehaviour {
     // public int MaxNumBombs = 10;
     public float BombRate = 0.75f;
 
-    private List<GameObject> followlist = new List<GameObject>();
+    private List<FollowEnemy> followlist = new List<FollowEnemy>();
 
     private GameObject[] bounds = new GameObject[4];
 
     public Vector3 offset;
+
+    public int numOfSegments=7;
+    int count=0;
+    int segmentSize;
+
+    public void Update() {
+        if (count>=numOfSegments) {
+            count = 0;
+        }
+        int start = count * segmentSize;
+        int stop = ((count + 1) * segmentSize) - 1;
+
+        for(int i = start; i <= stop; i++) {
+            if (i < followlist.Count) {
+                followlist[i].SometimesUpdate(Time.deltaTime*numOfSegments);
+            }
+        }
+
+        count++;
+    }
 
     void Awake() {
         if (instance == null) {
@@ -45,7 +65,7 @@ public class GroundManager : MonoBehaviour {
 
     public void placeEnemies(int x, int y, GameObject block) {
         for (int i = 0; i < followlist.Count; i++) {
-            var currentEnemy = followlist[i].GetComponent<FollowEnemy>();
+            var currentEnemy = followlist[i];
             if (!currentEnemy.gameObject.activeSelf) {
                 currentEnemy.uncovered = false;
                 currentEnemy.setBodyActive(false);
@@ -60,10 +80,12 @@ public class GroundManager : MonoBehaviour {
         int enemyIndex = Random.Range(0, followEnemies.Length - 1);
         GameObject newEnemy = Instantiate(followEnemies[enemyIndex], new Vector3(x, y, 0), Quaternion.identity);
         FollowEnemy head = newEnemy.GetComponent<FollowEnemy>();
+        head.delayTime = head.delayTime / numOfSegments;
         head.setBlock(block);
         head.spawn(offset);
-        followlist.Add(newEnemy);
+        followlist.Add(head);
         blockToEnemy.Add(block, newEnemy);
+        segmentSize = (followlist.Count / numOfSegments)+1; 
     }
 
     public void PlaceBlocks() {
