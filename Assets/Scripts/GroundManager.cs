@@ -13,7 +13,7 @@ public class GroundManager : MonoBehaviour
     private List<GameObject> block_ref = new List<GameObject>(); 
     [Space]
     [Header("Area Range")]
-    public static int MaxDepth = 100;
+    public static int MaxDepth = 200;
 
     public int Xrange = 9;
     public int BombBuffer = 4;
@@ -35,6 +35,8 @@ public class GroundManager : MonoBehaviour
 
     public void PlaceBlocks()
     {
+        stoneMat.SetFloat("_maxDepth", MaxDepth);
+
         for (int y = 0; y >= -MaxDepth; y--)
         {
             for (int x = -Xrange; x <= Xrange; x++)
@@ -47,9 +49,11 @@ public class GroundManager : MonoBehaviour
                 }
                 else
                 {
+
                     var newTile = Instantiate(block_types[Random.Range(0, block_types.Length)], new Vector3(x, y, 0), Quaternion.identity);
-                    var mr = newTile.GetComponent<MeshRenderer>();
-                    mr.material.SetFloat("maxDepthInLevel", MaxDepth);
+                    //var mr = newTile.GetComponent<MeshRenderer>();
+                    
+
                     block_ref.Add(newTile);
 
                 }
