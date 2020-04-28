@@ -9,7 +9,6 @@ public class PlayingPanel : MonoBehaviour
 
     public Text DepthDisplay;
     public Text ScoreDisplay;
-
     public Text LevelDisplay;
 
 

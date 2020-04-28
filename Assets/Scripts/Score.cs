@@ -17,7 +17,7 @@ public class Score : MonoBehaviour
         score = score + points;
         PlayingPanel.Instance.ShowScore(score);
 
-        Debug.Log("Score: " + score);
+        //Debug.Log("Score: " + score);
     }
 
     // set score back to 0

@@ -18,6 +18,6 @@ public class Depth : MonoBehaviour
             depth = newDepth;
             PlayingPanel.Instance.ShowDepth(depth);
         }
-        Debug.Log("Depth: " +depth);
+        //Debug.Log("Depth: " +depth);
     }
 }

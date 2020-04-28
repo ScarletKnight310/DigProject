@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public int depthInc = 50;
     public float speedInc = .25f;
     GroundManager manager;
-    int level = 1;
+    public static int level = 1;
 
 
     // Start is called before the first frame update

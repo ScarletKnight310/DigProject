@@ -60,6 +60,8 @@ public class Movement : MonoBehaviour
     {
         xB = 0;
         yB = 0;
+        lastx = 0.0f;
+        lasty = 0.0f;
     }
 
     public void zero() {
