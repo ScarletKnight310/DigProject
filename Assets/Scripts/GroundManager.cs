@@ -35,6 +35,8 @@ public class GroundManager : MonoBehaviour {
 
     public Vector3 offset;
 
+    public Material stoneMat;
+
     void Awake() {
         if (instance == null) {
             instance = this;

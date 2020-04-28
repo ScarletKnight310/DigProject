@@ -565,7 +565,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 34.55
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DepthDisplay: {fileID: 1915488211}
   ScoreDisplay: {fileID: 1760186327}
-  LevelDisplay: {fileID: 559325469}
+  LevelDisplay: {fileID: 0}
 --- !u!114 &1011140746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,7 +1296,7 @@ Transform:
   m_LocalScale: {x: 1000, y: 1000, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1846762798 stripped
 GameObject:
@@ -1558,46 +1558,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: speed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: left
-      value: 97
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: right
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: jump
-      value: 273
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: player_body
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: down
-      value: 115
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: isController
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
-        type: 3}
-      propertyPath: AutoMove
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886826, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1662,6 +1622,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: left
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: right
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: jump
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: player_body
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: down
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: isController
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
+        type: 3}
+      propertyPath: AutoMove
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886830, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}

@@ -48,7 +48,7 @@ MonoBehaviour:
   - {fileID: 0}
   bomb_types:
   - {fileID: 0}
-  block_ref: []
   Xrange: 2
   BombBuffer: 4
   BombRate: 0.75
+  stoneMat: {fileID: 2100000, guid: c1097745b2d151c40bb714930b3d31a9, type: 2}
