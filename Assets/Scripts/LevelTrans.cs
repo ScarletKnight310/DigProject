@@ -30,10 +30,10 @@ public class LevelTrans : MonoBehaviour
         // starts transtion
         if(curLvl != GameManager.level) {
             curLvl = GameManager.level;
-
             playingPanel.SetActive(false);
             lvlNum.text = curLvl + "";
             transUi.SetActive(true);
+            playerRef.SetActive(false);
 
             transitioning = true;
             uiMoveTime = Time.time + transTime;
@@ -42,7 +42,8 @@ public class LevelTrans : MonoBehaviour
         if(Time.time >= uiMoveTime && transitioning) {
             playingPanel.SetActive(true);
             transUi.SetActive(false);
-
+            playerRef.SetActive(true);
+            playerRef.GetComponent<Movement>().zero();
             transitioning = false;
         }
     }
