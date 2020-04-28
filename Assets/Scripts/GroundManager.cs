@@ -21,7 +21,7 @@ public class GroundManager : MonoBehaviour {
 
     [Space]
     [Header("Area Range")]
-    public static int MaxDepth = 20;
+    public static int MaxDepth = 200;
 
     public int Xrange = 9;
     public int BombBuffer = 4;
@@ -66,9 +66,14 @@ public class GroundManager : MonoBehaviour {
         blockToEnemy.Add(block, newEnemy);
     }
 
-    public void PlaceBlocks() {
-        for (int y = 0; y >= -MaxDepth; y--) {
-            for (int x = -Xrange; x <= Xrange; x++) {
+    public void PlaceBlocks()
+    {
+        stoneMat.SetFloat("_maxDepth", MaxDepth);
+
+        for (int y = 0; y >= -MaxDepth; y--)
+        {
+            for (int x = -Xrange; x <= Xrange; x++)
+            {
                 // MaxNumBombs >= 0 &&
                 if (!(-BombBuffer < y) && Random.value <= BombRate) {
                     block_ref.Add(Instantiate(bomb_types[Random.Range(0, bomb_types.Length)], new Vector3(x, y, 0), Quaternion.identity));

@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 4562517633041869722}
   - component: {fileID: 5280390605515798316}
   - component: {fileID: 6412104054296647764}
-  - component: {fileID: 8283055974025673776}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Block
