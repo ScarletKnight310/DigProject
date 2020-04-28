@@ -802,7 +802,7 @@ PrefabInstance:
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
       propertyPath: BombBuffer
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1340582353526314182, guid: a6eb3de9ae554514db0ed5a421acff55,
         type: 3}
@@ -915,7 +915,7 @@ PrefabInstance:
     - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
       propertyPath: speed
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7300731598320886817, guid: 23e2e3f00f816534b98dfda242486225,
         type: 3}
