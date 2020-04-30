@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
     float lastx = 0.0f;
     float lasty = 0.0f;
 
+    bool facingRight = true;
+
     public static Movement instance = null;
 
     public void Awake() {
@@ -34,6 +36,10 @@ public class Movement : MonoBehaviour
     {
         xB = Input.GetAxis("Horizontal");
         yB = Input.GetAxis("Vertical");
+        int moveDirection = Mathf.Abs(xB) < deadZone ? 0 : (int)Mathf.Sign(xB);
+        if (moveDirection == 1 && !facingRight || moveDirection == -1 && facingRight) {
+            Flip();
+        }
     }
 
     private void FixedUpdate() {
@@ -67,5 +73,12 @@ public class Movement : MonoBehaviour
     public void zero() {
         Reset();
         player_body.velocity = Vector3.zero;
+    }
+
+    void Flip() {
+        facingRight = !facingRight;
+        Vector3 charScale = transform.localScale;
+        charScale.x *= -1;
+        transform.localScale = charScale;
     }
 }
