@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public float speedInc = .25f;
     GroundManager manager;
     int level = 1;
-
+    bool startbuildlevel = false;
 
     // Start is called before the first frame update
     void Awake() {
@@ -29,7 +29,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.y <= (-1*GroundManager.MaxDepth)) {
+        if (startbuildlevel) {
+            manager.PlaceBlocks(manager.leftOffOnRow);
+            if(manager.leftOffOnRow <= (-1 * GroundManager.MaxDepth)) {
+                manager.CreateBounds();
+                playMV.speed += speedInc;
+                level++;
+                PlayingPanel.Instance.showLevel(level);
+                startbuildlevel = false;
+                //manager.leftOffOnRow = 0;
+            }
+        }
+        else if (player.transform.position.y <= (-1*GroundManager.MaxDepth)) {
             player.transform.position = new Vector3(0, 0, 0);
             player.GetComponent<Movement>().zero();
             if (level <= 5)
@@ -44,11 +55,13 @@ public class GameManager : MonoBehaviour
             }
             manager.removeLevel();
             manager.clearBounds();
-            manager.PlaceBlocks();
-            manager.CreateBounds();
-            playMV.speed += speedInc;
-            level++;
-            PlayingPanel.Instance.showLevel(level);
+            startbuildlevel = true;
+
+            //manager.PlaceBlocks();
+            //manager.CreateBounds();
+            //playMV.speed += speedInc;
+            //level++;
+            //PlayingPanel.Instance.showLevel(level);
         }
     }
 }

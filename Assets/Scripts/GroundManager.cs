@@ -39,6 +39,9 @@ public class GroundManager : MonoBehaviour {
     int count=0;
     int segmentSize;
 
+    public int buildNumOfRows=3;
+    public int leftOffOnRow = 0;
+
     public void Update() {
         if (count>=numOfSegments) {
             count = 0;
@@ -60,7 +63,11 @@ public class GroundManager : MonoBehaviour {
             instance = this;
         }
         CreateBounds();
-        PlaceBlocks();
+        print("num of rows "+buildNumOfRows);
+        while (leftOffOnRow >= (-1 * MaxDepth)){
+            PlaceBlocks(leftOffOnRow);
+        }
+        //leftOffOnRow = 0;
     }
 
     public void placeEnemies(int x, int y, GameObject block) {
@@ -88,8 +95,14 @@ public class GroundManager : MonoBehaviour {
         segmentSize = (followlist.Count / numOfSegments)+1; 
     }
 
-    public void PlaceBlocks() {
-        for (int y = 0; y >= -MaxDepth; y--) {
+    public void PlaceBlocks(int start) {
+        int end = start - buildNumOfRows;
+        if (end< -1*MaxDepth) {
+            end = -1*MaxDepth;
+        }
+        print("start: "+start);
+        print("end: "+end);
+        for (int y = start; y >= end; y--) {
             for (int x = -Xrange; x <= Xrange; x++) {
                 // MaxNumBombs >= 0 &&
                 if (!(-BombBuffer < y) && Random.value <= BombRate) {
@@ -104,6 +117,7 @@ public class GroundManager : MonoBehaviour {
                 }
             }
         }
+        leftOffOnRow = 1+(start - buildNumOfRows);
     }
 
     public void clearBounds() {
@@ -140,10 +154,13 @@ public class GroundManager : MonoBehaviour {
 
     public void removeLevel() {
         //    print("got here");
-        for(int i = 0; i < block_ref.Count; i++) {
-            Destroy(block_ref[i]);   
+        //for(int i = 0; i < block_ref.Count; i++) {
+        //    Destroy(block_ref[i]);   
+        //}
+        //block_ref.Clear();
+        for (int i = 0; i < block_ref.Count; i++) {
+            block_ref[i].SetActive(true);
         }
-        block_ref.Clear();
         blockToEnemy.Clear();
     }
 }
