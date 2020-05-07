@@ -63,9 +63,9 @@ public class GroundManager : MonoBehaviour {
             instance = this;
         }
         CreateBounds();
-        print("num of rows "+buildNumOfRows);
+        //print("num of rows "+buildNumOfRows);
         while (leftOffOnRow >= (-1 * MaxDepth)){
-            PlaceBlocks(leftOffOnRow);
+            PlaceBlocks();
         }
         //leftOffOnRow = 0;
     }
@@ -95,14 +95,14 @@ public class GroundManager : MonoBehaviour {
         segmentSize = (followlist.Count / numOfSegments)+1; 
     }
 
-    public void PlaceBlocks(int start) {
-        int end = start - buildNumOfRows;
+    public void PlaceBlocks() {
+        int end = leftOffOnRow - buildNumOfRows;
         if (end< -1*MaxDepth) {
             end = -1*MaxDepth;
         }
-        print("start: "+start);
-        print("end: "+end);
-        for (int y = start; y >= end; y--) {
+        //print("start: "+start);
+        //print("end: "+end);
+        for (int y = leftOffOnRow; y >= end; y--) {
             for (int x = -Xrange; x <= Xrange; x++) {
                 // MaxNumBombs >= 0 &&
                 if (!(-BombBuffer < y) && Random.value <= BombRate) {
@@ -117,7 +117,7 @@ public class GroundManager : MonoBehaviour {
                 }
             }
         }
-        leftOffOnRow = 1+(start - buildNumOfRows);
+        leftOffOnRow = 1+(leftOffOnRow - buildNumOfRows);
     }
 
     public void clearBounds() {

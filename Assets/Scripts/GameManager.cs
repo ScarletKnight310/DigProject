@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (startbuildlevel) {
-            manager.PlaceBlocks(manager.leftOffOnRow);
+            manager.PlaceBlocks();
             if(manager.leftOffOnRow <= (-1 * GroundManager.MaxDepth)) {
                 manager.CreateBounds();
                 playMV.speed += speedInc;
